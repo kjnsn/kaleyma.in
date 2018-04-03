@@ -1,30 +1,44 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import "./Home.scss";
 
+import { createFetchPostsAction } from "./reducer";
+
 const noop = () => {};
 
-export default props => {
-  const posts = [
-    {
-      slug: "how-its-built",
-      title: "How I built this website"
-    }
-  ];
-  return (
-    <div className="home">
-      <h1>Kaley Main</h1>
-      <p>Developer with a passion for the web and rock solid reliability.</p>
+class Home extends Component {
+  componentDidMount() {
+    this.props.store.dispatch(createFetchPostsAction());
+  }
 
-      <h3>Blog posts</h3>
+  render() {
+    const posts = this.props.posts;
+    
+    return (
+      <div className="home">
+        <h1>Kaley Main</h1>
+        <p>Developer with a passion for the web and rock solid reliability.</p>
 
-      <div className="blog-links">
-      {posts.map(post => (
-        <span key={post.slug} onClick={noop}>
-          {post.title}
-        </span>
-      ))}
+        <h3>Blog posts</h3>
+
+        <div className="blog-links">
+          {posts.map(post => (
+            <Link key={post.slug} to={"/post/" + post.slug}>
+              {post.title}
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  posts: state.posts,
+  loading: state.loading,
+});
+
+export default connect(mapStateToProps)(Home);
+
