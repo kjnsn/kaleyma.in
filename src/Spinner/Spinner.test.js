@@ -1,8 +1,16 @@
-var assert = require('assert');
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal([1,2,3].indexOf(4), -1);
-    });
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import React from 'react';
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
+
+import Spinner from './Spinner';
+
+Enzyme.configure({ adapter: new Adapter() });
+
+describe('<Spinner />', () => {
+  it('renders the spinner', () => {
+    const wrapper = shallow(<Spinner />);
+    expect(wrapper.find('div.loadingspinner')).to.have.length(1);
   });
 });
