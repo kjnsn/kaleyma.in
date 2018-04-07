@@ -13,6 +13,10 @@ class Home extends Component {
     if (!this.props.postsLoaded) {
       this.props.store.dispatch(createFetchPostsAction());
     }
+
+    if (document) {
+      document.title = "Kaley Main";
+    }
   }
 
   render() {
