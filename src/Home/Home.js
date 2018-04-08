@@ -14,7 +14,7 @@ class Home extends Component {
       this.props.store.dispatch(createFetchPostsAction());
     }
 
-    if (document) {
+    if (typeof document !== "undefined") {
       document.title = "Kaley Main";
     }
   }
