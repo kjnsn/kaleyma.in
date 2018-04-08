@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import first from "lodash/first";
 import moment from "moment";
 
-import { createFetchPostsAction } from "./reducer";
+import { createFetchPostsAction } from "../reducer";
 
 import "./BlogPost.scss";
 

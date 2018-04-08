@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 import "./Home.scss";
 
-import { createFetchPostsAction } from "./reducer";
+import { createFetchPostsAction } from "../reducer";
 
-import Spinner from "./Spinner/Spinner";
+import Spinner from "../Spinner/Spinner";
 
 class Home extends Component {
   componentDidMount() {

@@ -1,6 +1,4 @@
-import "./normalize.css";
-import "./skeleton.css";
-import "./index.css";
+import "./styles/index.scss";
 
 // Polyfills
 import "babel-polyfill";
@@ -19,34 +17,15 @@ import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from 'redux-saga'
 import reducer, { createPostsSaga } from "./reducer";
 import API from "./API";
+
+// Connect up all of the sagas and API classes.
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 const api = new API(PostsURL);
-
 sagaMiddleware.run(createPostsSaga(api));
 
-// Router
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import RoutesFn from "./routes";
+const Routes = RoutesFn(store);
 
-import Home from "./Home";
-import BlogPost from "./BlogPost";
-
-const App = () => (
-    <BrowserRouter>
-        <Switch>
-            <Route path="/post/:slug" component={BlogPostWrapped} />
-            <Route path="/" component={HomeWrapped}/>
-        </Switch>
-    </BrowserRouter>
-);
-
-const HomeWrapped = () => (
-    <Home store={store}></Home>
-);
-
-const BlogPostWrapped = ({ match }) => (
-    <BlogPost store={store} slug={match.params.slug} />
-);
-
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<Routes/>, document.getElementById('root'));
 
