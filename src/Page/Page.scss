@@ -1,0 +1,15 @@
+$height: 32px;
+
+.page {
+    position: relative;
+    img.github-logo {
+        padding: 10px;
+        position: absolute;
+        left: calc(100vw - 52px);
+        height: $height;
+    }
+
+    .content {
+        padding-top: $height;
+    }
+}

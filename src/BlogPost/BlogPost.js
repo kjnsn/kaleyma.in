@@ -9,6 +9,8 @@ import { createFetchPostsAction } from "../reducer";
 
 import "./BlogPost.scss";
 
+import Page from "../Page/Page";
+
 const blogPost = props => {
   if (!props.postsLoaded) {
     props.store.dispatch(createFetchPostsAction());
@@ -40,13 +42,15 @@ const blogPost = props => {
   }
 
   return (
-    <div className="blog-post">
-      <Link to="/" className="home-link">
-        Home
-      </Link>
+    <Page>
+      <div className="blog-post">
+        <Link to="/" className="home-link">
+          Home
+        </Link>
 
-      {postMarkup}
-    </div>
+        {postMarkup}
+      </div>
+    </Page>
   );
 };
 

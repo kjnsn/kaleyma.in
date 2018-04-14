@@ -7,6 +7,7 @@ import "./Home.scss";
 import { createFetchPostsAction } from "../reducer";
 
 import Spinner from "../Spinner/Spinner";
+import Page from "../Page/Page";
 
 class Home extends Component {
   componentDidMount() {
@@ -23,22 +24,26 @@ class Home extends Component {
     const posts = this.props.posts;
 
     return (
-      <div className="home">
-        <h1>Kaley Main</h1>
-        <p>Developer with a passion for the web and rock solid reliability.</p>
+      <Page>
+        <div className="home">
+          <h1>Kaley Main</h1>
+          <p>
+            Developer with a passion for the web and rock solid reliability.
+          </p>
 
-        <h3>Blog posts</h3>
+          <h3>Blog posts</h3>
 
-        <div className="blog-links">
-          {this.props.loading ? <Spinner /> : null}
+          <div className="blog-links">
+            {this.props.loading ? <Spinner /> : null}
 
-          {posts.map(post => (
-            <Link key={post.slug} to={"/post/" + post.slug}>
-              {post.title}
-            </Link>
-          ))}
+            {posts.map(post => (
+              <Link key={post.slug} to={"/post/" + post.slug}>
+                {post.title}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      </Page>
     );
   }
 }
