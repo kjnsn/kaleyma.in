@@ -10,7 +10,7 @@ if (window.Promise == undefined) {
 
 // Constants
 const PostsURL =
-  "https://asia-northeast1-kaley-main-blog.cloudfunctions.net/listPosts";
+  "https://asia-northeast1-kaley-main-blog.cloudfunctions.net/ListPostsV2";
 
 import ReactDOM from "react-dom";
 import React from "react";
