@@ -1,5 +1,4 @@
 import "babel-polyfill";
-import "whatwg-fetch";
 
 import { assert } from "chai";
 import { take } from "redux-saga/effects";

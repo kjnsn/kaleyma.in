@@ -19,27 +19,27 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "chai": "^4.2.0",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.11.2",
-    "firebase-tools": "^3.19.3",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "firebase-tools": "^7.5.0",
     "ignore-styles": "^5.0.1",
-    "mocha": "^5.2.0",
+    "mocha": "^6.2.1",
     "node-sass": "^4.12.0",
-    "parcel-bundler": "1.7.0",
-    "sinon": "^4.5.0"
+    "parcel-bundler": "~1.12.4",
+    "sinon": "^7.5.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "bluebird": "^3.5.3",
-    "lodash": "^4.17.11",
+    "bluebird": "^3.7.0",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-markdown": "^3.6.0",
-    "react-redux": "^5.1.1",
-    "react-router-dom": "^4.3.1",
-    "redux": "^3.7.2",
-    "redux-saga": "^0.16.2",
-    "whatwg-fetch": "^2.0.4"
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-markdown": "^4.2.2",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "redux-saga": "^1.1.1",
+    "whatwg-fetch": "^3.0.0"
   }
 }
