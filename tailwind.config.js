@@ -1,13 +1,11 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
-  purge: [
-    './src/index.html',
-  ],
-  darkMode: 'media', // or 'media' or 'class'
+  content: ["./src/index.html"],
   theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
+    fontFamily: {
+      mono: ["Inconsolata", ...defaultTheme.fontFamily.mono],
+    },
   },
   plugins: [],
-}
+};
